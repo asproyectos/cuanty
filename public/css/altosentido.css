@@ -1,0 +1,119 @@
+.kt-aside-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--open > .kt-menu__heading, .kt-aside-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--open > .kt-menu__link {
+    background-color: #363545;
+    color: #ef9f0b;
+}
+.kt-aside-menu .kt-menu__nav > .kt-menu__item .kt-menu__submenu .kt-menu__item.kt-menu__item--open > .kt-menu__link {
+    background-color: #363545;
+}
+.kt-aside-menu .kt-menu__nav > .kt-menu__item .kt-menu__submenu .kt-menu__item:not(.kt-menu__item--parent):not(.kt-menu__item--open):not(.kt-menu__item--here):not(.kt-menu__item--active):hover > .kt-menu__heading, .kt-aside-menu .kt-menu__nav > .kt-menu__item .kt-menu__submenu .kt-menu__item:not(.kt-menu__item--parent):not(.kt-menu__item--open):not(.kt-menu__item--here):not(.kt-menu__item--active):hover > .kt-menu__link {
+    background-color: #363545;
+}
+.kt-aside-menu .kt-menu__nav > .kt-menu__item:not(.kt-menu__item--parent):not(.kt-menu__item--open):not(.kt-menu__item--here):not(.kt-menu__item--active):hover > .kt-menu__heading, .kt-aside-menu .kt-menu__nav > .kt-menu__item:not(.kt-menu__item--parent):not(.kt-menu__item--open):not(.kt-menu__item--here):not(.kt-menu__item--active):hover > .kt-menu__link {
+    background-color: #363545;
+}
+.kt-aside-menu .kt-menu__nav > .kt-menu__item .kt-menu__submenu .kt-menu__item.kt-menu__item--open > .kt-menu__heading .kt-menu__link-text, .kt-aside-menu .kt-menu__nav > .kt-menu__item .kt-menu__submenu .kt-menu__item.kt-menu__item--open > .kt-menu__link .kt-menu__link-text {
+    color: #ef9f0b;
+    font-weight: 500;
+}
+.kt-aside-menu .kt-menu__nav > .kt-menu__item > .kt-menu__heading .kt-menu__link-text, .kt-aside-menu .kt-menu__nav > .kt-menu__item > .kt-menu__link .kt-menu__link-text {
+    color: #d6d6d6;
+    font-weight: 500;
+}
+.kt-aside-menu .kt-menu__nav > .kt-menu__item:not(.kt-menu__item--parent):not(.kt-menu__item--open):not(.kt-menu__item--here):not(.kt-menu__item--active):hover > .kt-menu__heading .kt-menu__link-text, .kt-aside-menu .kt-menu__nav > .kt-menu__item:not(.kt-menu__item--parent):not(.kt-menu__item--open):not(.kt-menu__item--here):not(.kt-menu__item--active):hover > .kt-menu__link .kt-menu__link-text {
+    color: #ef9f0b;
+}
+.kt-aside-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--open > .kt-menu__heading .kt-menu__link-text, .kt-aside-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--open > .kt-menu__link .kt-menu__link-text {
+    color: #ef9f0b;
+}
+.kt-aside-menu .kt-menu__nav > .kt-menu__item .kt-menu__submenu .kt-menu__item:not(.kt-menu__item--parent):not(.kt-menu__item--open):not(.kt-menu__item--here):not(.kt-menu__item--active):hover > .kt-menu__heading .kt-menu__link-text, .kt-aside-menu .kt-menu__nav > .kt-menu__item .kt-menu__submenu .kt-menu__item:not(.kt-menu__item--parent):not(.kt-menu__item--open):not(.kt-menu__item--here):not(.kt-menu__item--active):hover > .kt-menu__link .kt-menu__link-text {
+    color: #ef9f0b;
+}
+
+.kt-aside-menu .kt-menu__nav > .kt-menu__item .kt-menu__submenu .kt-menu__item > .kt-menu__heading .kt-menu__link-text, .kt-aside-menu .kt-menu__nav > .kt-menu__item .kt-menu__submenu .kt-menu__item > .kt-menu__link .kt-menu__link-text {
+    color: #d6d6d6;
+}
+
+.page-item.active .page-link {
+    background-color: #824305;
+    border-color: #824305;
+}
+
+.page-link {
+    color: #824305;
+    font-weight: 500;
+}
+
+nav {
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+
+#kt_aside_menu > ul > li.kt-menu__item.kt-menu__item--submenu.kt-menu__item--open > div > ul > li > a > i > span {
+    background-color: #ef9f0b;
+    width: 5px;
+    height: 5px;
+}
+
+.as-alarma {
+    color: #911212;
+    font-weight: 500;
+}
+
+.as-alarma-bg {
+    background-color: #911212;
+    color: white;
+    font-weight: 500;
+}
+
+.as-exito {
+    color: #89b94e;
+    font-weight: 500;
+}
+
+.center-block-as {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.iconos-home-as {
+    transition: background-color 1s, color 1s;
+}
+.iconos-home-as h4 {
+    color: #363545;
+}
+.iconos-home-as:hover {
+    background-color: #363545;
+}
+
+.iconos-home-as:hover h4 {
+    color: white;
+}
+
+.as-comentario-1 {
+    color: #ffffff;
+    background: #0abb87;
+}
+
+.as-comentario-2 {
+    color: #111111;
+    background: #ffb822;
+}
+
+.as-comentario-3 {
+    color: #ffffff;
+    background: #fd397a;
+}
+
+.as-sticker-1 {
+    color: #0abb87;
+}
+
+.as-sticker-2 {
+    color: #ffb822;
+}
+
+.as-sticker-3 {
+    color: #fd397a;
+}
