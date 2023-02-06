@@ -13,10 +13,10 @@ class CreateFormularioGrupoPreguntaTable extends Migration
      */
     public function up()
     {
-        Schema::create('formulario_grupo_pregunta', function (Blueprint $table) {
+        Schema::create('formulario_grupo_pregunta12', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('formulario_id');
-            $table->unsignedTinyInteger('grupo_pregunta_id');
+            // $table->foreignId('formulario_id');
+            // $table->unsignedTinyInteger('grupo_pregunta_id');
         });
     }
 
@@ -27,6 +27,6 @@ class CreateFormularioGrupoPreguntaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('formulario_grupo_pregunta');
+        Schema::dropIfExists('formulario_grupo_pregunta12');
     }
 }

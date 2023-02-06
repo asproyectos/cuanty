@@ -6,6 +6,9 @@ use App\Formulario;
 use App\NumeroRonda;
 use App\TipoRonda;
 use App\GrupoPregunta;
+use App\Pregunta;
+use App\Answer;
+use App\Opcion;
 use Illuminate\Http\Request;
 
 class FormularioController extends Controller
@@ -21,33 +24,16 @@ class FormularioController extends Controller
         return view('rutas.index', compact('formulario'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Formulario  $formulario
-     * @return \Illuminate\Http\Response
-     */
     public function show(Formulario $formulario)
     {
         //
@@ -56,43 +42,62 @@ class FormularioController extends Controller
     public function empresa()
     {
         $formulario = Formulario::find(1);
-        return view('formularios.show', compact('formulario'));
+        $estadoFormulario = $this->obtenerEstadoFormulario($formulario);
+        //  dd($estadoFormulario);
+        return view('formularios.show', compact('formulario','estadoFormulario'));
     }
     public function perfilEmprendedor()
     {
         $formulario = Formulario::find(101);
-        return view('formularios.show', compact('formulario'));
+        $estadoFormulario = $this->obtenerEstadoFormulario($formulario);
+       
+        return view('formularios.show', compact('formulario','estadoFormulario'));
     }
     public function direccionamientoEstrategico()
     {
         $formulario = Formulario::find(201);
-        return view('formularios.show', compact('formulario'));
+        $estadoFormulario = $this->obtenerEstadoFormulario($formulario);
+        return view('formularios.show', compact('formulario','estadoFormulario'));
     }
     public function financiero()
     {
         $formulario = Formulario::find(301);
-        return view('formularios.show', compact('formulario'));
+        $estadoFormulario = $this->obtenerEstadoFormulario($formulario);
+        return view('formularios.show', compact('formulario','estadoFormulario'));
     }
     public function mercadeoYVentas()
     {
         $formulario = Formulario::find(401);
-        return view('formularios.show', compact('formulario'));
+        $estadoFormulario = $this->obtenerEstadoFormulario($formulario);
+        return view('formularios.show', compact('formulario','estadoFormulario'));
     }
     public function gestionTecnica()
     {
         $formulario = Formulario::find(501);
-        return view('formularios.show', compact('formulario'));
+        $estadoFormulario = $this->obtenerEstadoFormulario($formulario);
+        return view('formularios.show', compact('formulario','estadoFormulario'));
     }
     public function administracionNormativa()
     {
         $formulario = Formulario::find(601);
-        return view('formularios.show', compact('formulario'));
+        $estadoFormulario = $this->obtenerEstadoFormulario($formulario);
+        return view('formularios.show', compact('formulario','estadoFormulario'));
     }
 
-
-
-
-
+    private function obtenerEstadoFormulario($formulario){
+        $answers = Answer::where('user_id',auth()->user()->id)->get();
+        $sum=0;
+        foreach ($answers as $key => $answer) {
+            if($answer->preguntas[0]->grupoPregunta->formularios->id == $formulario->id){
+                $sum++;
+            }
+        }
+        $numeroIntentosPermitidos=5;
+        $permitir = $sum >= 5 ? false : true;
+        $numeroIntentosFaltantes= $numeroIntentosPermitidos - $sum ;
+        $intentosRealizados = $sum;
+        return   ['permitirForm' => $permitir, 'numeroIntentosPermitidos'=> $numeroIntentosPermitidos,'numeroIntentosFaltantes' =>$numeroIntentosFaltantes,'intentosRealizados'=>$intentosRealizados, 'nombreFormulario'=>$formulario->nombre];
+    }
 
 
 

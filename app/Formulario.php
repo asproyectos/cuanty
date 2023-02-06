@@ -13,7 +13,7 @@ class Formulario extends Model
 
     public function grupoPreguntas()
     {
-        return $this->hasMany('App\GrupoPregunta');
+        return $this->hasMany(GrupoPregunta::class, 'formulario_id');
     }
 
 

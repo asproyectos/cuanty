@@ -15,8 +15,12 @@ class GrupoPregunta extends Model
 
     public function formularios()
     {
-        return $this->belongsTo('App\Formulario');
+        return $this->belongsTo(Formulario::class, 'formulario_id');
     }
+
+    // public function ciudades() {
+    //     return $this->belongsTo(Ciudad::class, 'ciudad_id');
+    // }
 
     public function preguntas()
     {

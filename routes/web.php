@@ -12,23 +12,40 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/empresa', 'FormularioController@empresa')->name('formularios.empresa');
-Route::get('/perfil-emprendedor', 'FormularioController@perfilEmprendedor')->name('formularios.perfil-emprendedor');
-Route::get('/direccionamiento-estrategico', 'FormularioController@direccionamientoEstrategico')->name('formularios.direccionamiento-estrategico');
-Route::get('/financiero', 'FormularioController@financiero')->name('formularios.financiero');
-Route::get('/mercadeo-y-ventas', 'FormularioController@mercadeoYVentas')->name('formularios.mercadeo-y-ventas');
-Route::get('/gestion-tecnica', 'FormularioController@gestionTecnica')->name('formularios.gestion-tecnica');
-Route::get('/administracion-normativa', 'FormularioController@administracionNormativa')->name('formularios.administracion-normativa');
+// Route::get('/empresa', 'FormularioController@empresa')->name('formularios.empresa');
+// Route::get('/perfil-emprendedor', 'FormularioController@perfilEmprendedor')->name('formularios.perfil-emprendedor');
+// Route::get('/direccionamiento-estrategico', 'FormularioController@direccionamientoEstrategico')->name('formularios.direccionamiento-estrategico');
+// Route::get('/financiero', 'FormularioController@financiero')->name('formularios.financiero');
+// Route::get('/mercadeo-y-ventas', 'FormularioController@mercadeoYVentas')->name('formularios.mercadeo-y-ventas');
+// Route::get('/gestion-tecnica', 'FormularioController@gestionTecnica')->name('formularios.gestion-tecnica');
+// Route::get('/administracion-normativa', 'FormularioController@administracionNormativa')->name('formularios.administracion-normativa');
 
 // Route::get('/', function () {
 //     return redirect('/home');
 // });
-//
+
+Route::get('/', function () {
+    return view('auth.login');
+});
+
 Auth::routes();
 //
 //
-// Route::group(['middleware' => ['auth']], function () {
-//     Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => ['auth']], function () {
+
+    // Route::resource('empresa', App\Http\Controllers\PermissionController::class);
+    Route::get('/empresa', 'FormularioController@empresa')->name('formularios.empresa');
+    // Route::get('/empresa/create', 'FormularioController@create')->name('formularios.empresa.create');
+    Route::get('/perfil-emprendedor', 'FormularioController@perfilEmprendedor')->name('formularios.perfil-emprendedor');
+    Route::get('/direccionamiento-estrategico', 'FormularioController@direccionamientoEstrategico')->name('formularios.direccionamiento-estrategico');
+    Route::get('/financiero', 'FormularioController@financiero')->name('formularios.financiero');
+    Route::get('/mercadeo-y-ventas', 'FormularioController@mercadeoYVentas')->name('formularios.mercadeo-y-ventas');
+    Route::get('/gestion-tecnica', 'FormularioController@gestionTecnica')->name('formularios.gestion-tecnica');
+    Route::get('/administracion-normativa', 'FormularioController@administracionNormativa')->name('formularios.administracion-normativa');
+
+    Route::post('/answers', [App\Http\Controllers\AnswerController::class, 'store'])->name('answers.store');
+
+    // Route::get('/home', 'HomeController@index')->name('home');
 //
 //     Route::get('/analisis', 'PreguntaController@analisis')->name('equipos.analisis');
 //     Route::get('/analisis/exportar', 'PreguntaController@exportar')->name('equipos.exportar');
@@ -76,4 +93,4 @@ Auth::routes();
 //     Route::post('imagen-especies/store', 'ImagenAveController@uploadImages')->name('imagen-especies.store');
 //     Route::post('imagen-especies/delete', 'ImagenAveController@deleteImage')->name('imagen-especies.delete');
 //
-// });
+});

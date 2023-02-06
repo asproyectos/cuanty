@@ -40,10 +40,10 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function username()
-    {
-        return 'identificacion';
-    }
+    // public function username()
+    // {
+    //     return 'identificacion';
+    // }
 
     public function loginApi(Request $request)
     {

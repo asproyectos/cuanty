@@ -73,7 +73,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                         <form class="kt-form" style="width: 350px;" method="POST" action="{{ route('login') }}">
                                             @csrf
                                             <div class="input-group">
-                                                <input class="form-control" type="text" id="identificacion" placeholder="Identificación" name="identificacion" autocomplete="off">
+                                                <input class="form-control" type="email" id="identificacion" placeholder="Identificación" name="email" autocomplete="off">
                                             </div>
                                             <div class="input-group">
                                                 <input class="form-control" id="password" type="password" placeholder="Contraseña" name="password">
@@ -96,6 +96,12 @@ License: You must have a valid license purchased only from themeforest(the above
                                             ¿Ha olvidado su contraseña?
                                         </span>
                                         <a style="color:#ef9f0b; font-weight: 600;" href="{{ route('password.request') }}">Recordar</a>
+                                    </div>
+                                    <div class="kt-login__account">
+                                        <span class="kt-login__account-msg">
+                                            ¿Aun no te encuentras registrado?. Registrate aquí
+                                        </span>
+                                        <a style="color:#ef9f0b; font-weight: 600;" href="{{ route('register') }}">Registrar</a>
                                     </div>
                                     @if ($errors->any())
                                         <div class="alert alert-danger">

@@ -32,4 +32,9 @@ class Pregunta extends Model
     {
         return $this->belongsTo('App\TipoPregunta');
     }
+
+    public function answers()
+    {
+        return $this->belongsToMany('App\Answer');
+    }
 }
